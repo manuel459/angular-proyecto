@@ -1,3 +1,33 @@
-<router-outlet></router-outlet>
+<div class="container">
+  <header>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">Materia Weather</a>
+        <app-search (searchEvent)="onSearch($event)"></app-search>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light"> Materia APP : Busca una ciudad IMMBEEESILLL
+              {{data$ | async | json}}
+              <router-outlet></router-outlet>
+          </h1>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  
+</div>
+
+
 <button routerLink="/users">Users</button>
 <button routerLink="/Orders">Orders</button>
+
+
+
+

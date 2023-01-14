@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Weather } from './country/interfaces/country.interface';
+import { WeatherServiceService } from './services/weather-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'materia';
+  data$!: Observable<Weather>;
+
+  constructor(private readonly weatherSvc: WeatherServiceService){}
+
+  onSearch(city: string): void
+  {
+    this.data$ = this.weatherSvc.getWeatherByName(city);
+  }
+
 }

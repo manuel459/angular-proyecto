@@ -7,19 +7,23 @@ import { UsersComponent } from './users/users.component';
 import { OrdersComponent } from './orders/orders.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CountryComponent } from './country/country.component';
+import { SearchComponent } from './shared/components/search/search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     OrdersComponent,
-    CountryComponent,
+    CountryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    SearchComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

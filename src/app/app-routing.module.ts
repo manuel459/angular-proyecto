@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OrdersComponent } from './orders/orders.component';
 import { DataResolverService } from './services/data-resolver.service';
+import { SearchComponent } from './shared/components/search/search.component';
 
 const routes: Routes = [
   {
