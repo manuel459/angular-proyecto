@@ -1,27 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OrdersComponent } from './orders/orders.component';
-import { DataResolverService } from './services/data-resolver.service';
-import { SearchComponent } from './shared/components/search/search.component';
+import { WeatherComponent } from './pages/weather/weather.component';
+import { DataResolverService } from './shared/service/data-resolver.service';
 
 const routes: Routes = [
   {
-      path: 'users',
-      loadChildren: () => import('./users/users-routing.module').then((m) => m.AppRoutingModule)
-  }, 
+    path: '',
+    redirectTo: '/weather',
+    pathMatch:'full'
+  },
   {
-    path : 'orders',
-    component: OrdersComponent,
-    resolve: 
-    {
-      myData: DataResolverService
-    }
-  }
-
+    path: 'weather',
+    loadChildren: ()=>   import('./pages/weather/weather.module').then((m) => m.WeatherModule),
+    component: WeatherComponent,
+    resolve: {
+      weatherData: DataResolverService,
+    },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

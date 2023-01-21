@@ -3,7 +3,7 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/c
 import { Observable } from 'rxjs';
 import { enviroment } from "src/app/environment/environment";
 
-export class CountryInterceptor implements HttpInterceptor {
+export class WeatherInterceptor implements HttpInterceptor {
 
   intercept(
     req: HttpRequest<any>,

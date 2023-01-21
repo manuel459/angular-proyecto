@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <header>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
@@ -12,7 +12,7 @@
     <section class="py-5 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light"> Materia APP : Busca una ciudad IMMBEEESILLL
+          <h1 class="fw-light"> Materia APP : Busca una ciudad
               {{data$ | async | json}}
               <router-outlet></router-outlet>
           </h1>
@@ -20,13 +20,25 @@
       </div>
     </section>
   </main>
+
+  <app-weather></app-weather>
   
   
+</div> -->
+
+<div class="container">
+  <app-navbar />
+  <main>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Materia APP</h1>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
-
-
-<button routerLink="/users">Users</button>
-<button routerLink="/Orders">Orders</button>
 
 
 
